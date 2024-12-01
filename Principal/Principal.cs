@@ -146,12 +146,18 @@ namespace Principal
 
         private void btnMedicamentos_Click(object sender, EventArgs e)
         {
-          
+            pictureBox2.Image = btnUsuarios.Image; // selecciona la imagen que esta en el boton
+            TituloBarra.Text = btnUsuarios.Text;
+            MedicamentoGestion medicamento = new MedicamentoGestion();
+            OpenFroms(medicamento);
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-          
+            pictureBox2.Image = btnUsuarios.Image; // selecciona la imagen que esta en el boton
+            TituloBarra.Text = btnUsuarios.Text;
+            UsuariosGestion usuarios = new UsuariosGestion();
+            OpenFroms(usuarios);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)

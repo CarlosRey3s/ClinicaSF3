@@ -35,26 +35,22 @@ namespace Principal.GUI
 
         private void btnEntrar_Click_1(object sender, EventArgs e)
         {
-            /* DataTable dt = new DataTable();
-
-             DataLayer.DBOperaciones oOperacion = new DataLayer.DBOperaciones();
-             String query = "SELECT ID_Usuario,Empleados_ID_Empleado, Roles_ID_Rol FROM usuarios WHERE Usuario ='" + txtUsuario.Text + "' AND Clave = '" + txtClave.Text + "';";
-             dt = oOperacion.Consultar(query);
-
-             dt.Rows.Count == 1*/
-
+            // Crear una nueva instancia de la clase SesionLogin
             SesionLogin dt = new SesionLogin();
-            dt.Username1(txtUsuario.Text);
-            dt.password1(txtClave.Text);
 
+            // Asignar valores de los campos de texto a las propiedades
+            dt.Username = txtUsuario.Text;   // Asignar el nombre de usuario
+            dt.Password = txtClave.Text;     // Asignar la contraseña
+
+            // Verificar si el nombre de usuario y la contraseña son correctos
             if (dt.Verificar())
             {
-                _Autorizado = true;
-                Close();
+                _Autorizado = true;    // Si la verificación es exitosa, marcar como autorizado
+                Close();                // Cerrar el formulario
             }
             else
             {
-                MessageBox.Show("ERROR CONTRASEÑA O USUARIO INCORRECTO.");
+                MessageBox.Show("ERROR: Contraseña o usuario incorrecto.");  // Mostrar mensaje de error
             }
         }
 
