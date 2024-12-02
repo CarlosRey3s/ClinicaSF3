@@ -46,24 +46,36 @@ namespace General.Controlador
         {
             DataLayer.DBOperaciones operacion = new DataLayer.DBOperaciones();
             string query = @"
-        SELECT COUNT(*) 
-        FROM cm_usuarios u
-        JOIN cm_roles r ON u.Roles_ID_Rol = r.ID_Rol
-        JOIN cm_roles_opciones ro ON r.ID_Rol = ro.Roles_ID_Rol
-        JOIN cm_opciones o ON ro.Opciones_ID_Opcion = o.ID_Opcion
-        WHERE u.ID_Usuario = @idUsuario
-        AND o.Opc_NombreOpcion = @permiso;";
+        SELECT 
+            CASE 
+                WHEN COUNT(o.ID_Opcion) > 0 THEN 'Permiso otorgado'
+                ELSE 'Permiso denegado'
+            END AS Permiso
+        FROM 
+            cm_usuarios u
+        JOIN 
+            cm_roles r ON u.Roles_ID_Rol = r.ID_Rol
+        JOIN 
+            cm_roles_opciones ro ON ro.Roles_ID_Rol = r.ID_Rol
+        JOIN 
+            cm_opciones o ON ro.Opciones_ID_Opcion = o.ID_Opcion
+        WHERE 
+            u.ID_Usuario = @idUsuario
+            AND o.Opc_NombreOpcion = @permiso";
 
             Dictionary<string, object> parametros = new Dictionary<string, object>()
     {
-        { "@idUsuario", idUsuario },
+        { "@idUsuario", idUsuario }, // Asegúrate de que idUsuario es válido
         { "@permiso", permiso }
     };
 
             try
             {
                 var result = operacion.ConsultarUsuario(query, parametros);
-                return Convert.ToInt32(result.Rows[0][0]) > 0;
+                string permisoOtorgado = result.Rows[0]["Permiso"].ToString();
+
+                // Si el permiso es otorgado, devuelve true, si no, false
+                return permisoOtorgado == "Permiso otorgado";
             }
             catch (Exception ex)
             {
@@ -71,6 +83,7 @@ namespace General.Controlador
                 return false;
             }
         }
+
 
 
         // Método para obtener todas las opciones de un usuario

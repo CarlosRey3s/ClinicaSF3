@@ -16,6 +16,7 @@ namespace General.CLS
         private string _Cons_Tratamiento;
         private string _Cons_PoseeCita;
         private float _Cons_PrecioConsulta;
+        private int? _ID_Paciente;
         private DateTime _Cons_FechaConsulta;
 
         public int ID_Consulta { get => _ID_Consulta; set => _ID_Consulta = value; }
@@ -25,34 +26,44 @@ namespace General.CLS
         public float Cons_PrecioConsulta { get => _Cons_PrecioConsulta; set => _Cons_PrecioConsulta = value; }
         public DateTime Cons_FechaConsulta { get => _Cons_FechaConsulta; set => _Cons_FechaConsulta = value; }
         public string Cons_PoseeCita { get => _Cons_PoseeCita; set => _Cons_PoseeCita = value; }
+        public int? ID_Paciente { get => ID_Paciente; set => ID_Paciente = value; }
+
         // Método Insertar
         public bool InsertarConsulta(Consulta consulta)
         {
-            // Construir la sentencia SQL de inserción
             StringBuilder sentencia = new StringBuilder();
-            sentencia.Append("INSERT INTO cm_consultas (Cons_Diganostico, Cons_Tratamiento, Cons_PrecioConsulta, Cons_FechaConsulta, Citas_ID_Cita, Cons_PoseeCita) ");
+            sentencia.Append("INSERT INTO cm_consultas (Cons_Diganostico, Cons_Tratamiento, Cons_PrecioConsulta, Cons_FechaConsulta, Citas_ID_Cita, Cons_PoseeCita, Pacientes_ID_Paciente) ");
             sentencia.Append("VALUES (");
             sentencia.Append("'" + consulta.Cons_Diganostico + "', ");
             sentencia.Append("'" + consulta.Cons_Tratamiento + "', ");
             sentencia.Append(consulta.Cons_PrecioConsulta + ", ");
             sentencia.Append("'" + consulta.Cons_FechaConsulta.ToString("yyyy-MM-dd HH:mm:ss") + "', ");
 
-            // Si PoseeCita es "NO", asignamos NULL a Citas_ID_Cita
+            // Manejar el valor de Citas_ID_Cita basado en Cons_PoseeCita
             if (consulta.Cons_PoseeCita == "NO")
             {
-                sentencia.Append("NULL, ");  // Para que Citas_ID_Cita sea NULL si PoseeCita es "NO"
+                sentencia.Append("NULL, ");
             }
             else
             {
-                sentencia.Append(consulta.Citas_ID_Cita + ", ");  // Asignamos el ID de la cita si PoseeCita es "SI"
+                sentencia.Append(consulta.Citas_ID_Cita + ", ");
             }
 
-            // Insertar el valor de Cons_PoseeCita
-            sentencia.Append("'" + consulta.Cons_PoseeCita + "');");
+            sentencia.Append("'" + consulta.Cons_PoseeCita + "', ");
+
+            // Manejar el valor de Pacientes_ID_Paciente
+            if (consulta.ID_Paciente.HasValue)
+            {
+                sentencia.Append(consulta.ID_Paciente.Value);
+            }
+            else
+            {
+                sentencia.Append("NULL");
+            }
+            sentencia.Append(");");
 
             try
             {
-                // Ejecutar la sentencia SQL en la base de datos
                 DataLayer.DBOperaciones operacion = new DataLayer.DBOperaciones();
                 if (operacion.EjecutarSentencia(sentencia.ToString()) >= 0)
                 {
@@ -61,7 +72,6 @@ namespace General.CLS
             }
             catch (Exception ex)
             {
-                // Si ocurre un error, lo registramos en la consola
                 Console.WriteLine("Error al insertar la consulta: " + ex.Message);
             }
 
@@ -78,14 +88,24 @@ namespace General.CLS
             sentencia.Append("Cons_FechaConsulta = '" + consulta.Cons_FechaConsulta.ToString("yyyy-MM-dd HH:mm:ss") + "', ");
             sentencia.Append("Cons_PoseeCita = '" + consulta.Cons_PoseeCita + "', ");
 
-            // Si PoseeCita es "NO", asignamos NULL a Citas_ID_Cita
+            // Manejar el valor de Citas_ID_Cita basado en Cons_PoseeCita
             if (consulta.Cons_PoseeCita == "NO")
             {
-                sentencia.Append("Citas_ID_Cita = NULL ");
+                sentencia.Append("Citas_ID_Cita = NULL, ");
             }
             else
             {
-                sentencia.Append("Citas_ID_Cita = " + consulta.Citas_ID_Cita);
+                sentencia.Append("Citas_ID_Cita = " + consulta.Citas_ID_Cita + ", ");
+            }
+
+            // Manejar el valor de Pacientes_ID_Paciente
+            if (consulta.ID_Paciente.HasValue)
+            {
+                sentencia.Append("Pacientes_ID_Paciente = " + consulta.ID_Paciente.Value);
+            }
+            else
+            {
+                sentencia.Append("Pacientes_ID_Paciente = NULL");
             }
 
             sentencia.Append(" WHERE ID_Consulta = " + consulta.ID_Consulta + ";");

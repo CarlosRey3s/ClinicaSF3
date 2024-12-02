@@ -2,7 +2,6 @@
 using General.GUI.GUIGestiones;
 using Principal.CLS;
 using Principal.GUI;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +58,19 @@ namespace Principal
         {
             Home home = new Home();
             OpenFroms(home);
+
+            // Verificar si el nombre del usuario está disponible
+            if (!string.IsNullOrEmpty(Sesion.UsuarioNombre))
+            {
+                // Mostrar el nombre del usuario en el botón o cualquier control
+                btnusuario.Text = "Bienvenido, " + Sesion.UsuarioNombre;
+            }
+            else
+            {
+                btnusuario.Text = "Usuario no logueado";
+            }
+
+          
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -80,7 +92,10 @@ namespace Principal
         }
         private void btnPacientes_Click(object sender, EventArgs e)
         {
-          
+            pictureBox2.Image = btnPacientes.Image;
+            TituloBarra.Text = btnPacientes.Text;
+            PacientesGestion home = new PacientesGestion();
+            OpenFroms(home);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -90,7 +105,10 @@ namespace Principal
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-
+            pictureBox2.Image = btnPacientes.Image;
+            TituloBarra.Text = btnPacientes.Text;
+            PacientesGestion home = new PacientesGestion();
+            OpenFroms(home);
         }
         //Drag form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -146,8 +164,8 @@ namespace Principal
 
         private void btnMedicamentos_Click(object sender, EventArgs e)
         {
-            pictureBox2.Image = btnUsuarios.Image; // selecciona la imagen que esta en el boton
-            TituloBarra.Text = btnUsuarios.Text;
+            pictureBox2.Image = btnMedicamentos.Image; // selecciona la imagen que esta en el boton
+            TituloBarra.Text = btnMedicamentos.Text;
             MedicamentoGestion medicamento = new MedicamentoGestion();
             OpenFroms(medicamento);
         }
@@ -173,6 +191,51 @@ namespace Principal
 
 
 
+        }
+
+        public static class Sesion
+        {
+            public static string UsuarioNombre { get; set; }
+        }
+
+        private void btnusuario_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PanelEscritorio_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnusuario_TextChange(object sender, EventArgs e)
+        {
+            // Verificar si el nombre del usuario está disponible
+            if (!string.IsNullOrEmpty(Sesion.UsuarioNombre))
+            {
+                // Mostrar el nombre del usuario en un mensaje, en un label, o en el Text de un botón
+                MessageBox.Show("Usuario logueado: " + Sesion.UsuarioNombre, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Si quieres actualizar un TextBox, Label, o ToolStrip, también puedes hacer algo como esto:
+                btnusuario.Text = "Bienvenido, " + Sesion.UsuarioNombre;
+            }
+            else
+            {
+                MessageBox.Show("No hay usuario logueado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = btnFactura.Image; // selecciona la imagen que esta en el boton
+            TituloBarra.Text = btnFactura.Text;
+            FacturaGestion factura = new FacturaGestion();
+            OpenFroms(factura);
         }
     }
 

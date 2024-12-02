@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasGestion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Registro = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.ID_Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cit_FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cit_Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cit_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pacientes_ID_Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctores_ID_Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Consultorios_ID_Consultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Insertar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -43,44 +48,103 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnFactura = new System.Windows.Forms.ToolStripButton();
             this.btnConsulta = new System.Windows.Forms.ToolStripButton();
-            this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.ID_Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cit_FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cit_Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cit_Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pacientes_ID_Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doctores_ID_Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Consultorios_ID_Consultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Registro = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // dgvCitas
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2,
-            this.Registro});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 486);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(934, 25);
-            this.statusStrip1.TabIndex = 8;
-            this.statusStrip1.Text = "statusStrip1";
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCitas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCitas.ColumnHeadersHeight = 30;
+            this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Cita,
+            this.Cit_FechaHora,
+            this.Cit_Motivo,
+            this.Cit_Estado,
+            this.Pacientes_ID_Paciente,
+            this.Doctores_ID_Doctor,
+            this.Consultorios_ID_Consultorio});
+            this.dgvCitas.EnableHeadersVisualStyles = false;
+            this.dgvCitas.Location = new System.Drawing.Point(3, 55);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.RowHeadersVisible = false;
+            this.dgvCitas.RowHeadersWidth = 51;
+            this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCitas.Size = new System.Drawing.Size(873, 420);
+            this.dgvCitas.TabIndex = 15;
             // 
-            // toolStripStatusLabel2
+            // ID_Cita
             // 
-            this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(147, 20);
-            this.toolStripStatusLabel2.Text = "Registros Encontrados:";
+            this.ID_Cita.DataPropertyName = "ID_Cita";
+            this.ID_Cita.HeaderText = "ID_Cita";
+            this.ID_Cita.MinimumWidth = 6;
+            this.ID_Cita.Name = "ID_Cita";
+            this.ID_Cita.ReadOnly = true;
             // 
-            // Registro
+            // Cit_FechaHora
             // 
-            this.Registro.Name = "Registro";
-            this.Registro.Size = new System.Drawing.Size(13, 20);
-            this.Registro.Text = "0";
+            this.Cit_FechaHora.DataPropertyName = "Cit_FechaHora";
+            this.Cit_FechaHora.HeaderText = "Fecha y Hora";
+            this.Cit_FechaHora.MinimumWidth = 6;
+            this.Cit_FechaHora.Name = "Cit_FechaHora";
+            this.Cit_FechaHora.ReadOnly = true;
+            // 
+            // Cit_Motivo
+            // 
+            this.Cit_Motivo.DataPropertyName = "Cit_Motivo";
+            this.Cit_Motivo.HeaderText = "Motivo";
+            this.Cit_Motivo.Name = "Cit_Motivo";
+            this.Cit_Motivo.ReadOnly = true;
+            // 
+            // Cit_Estado
+            // 
+            this.Cit_Estado.DataPropertyName = "Cit_Estado";
+            this.Cit_Estado.HeaderText = "Estado";
+            this.Cit_Estado.Name = "Cit_Estado";
+            this.Cit_Estado.ReadOnly = true;
+            // 
+            // Pacientes_ID_Paciente
+            // 
+            this.Pacientes_ID_Paciente.DataPropertyName = "Pacientes_ID_Paciente";
+            this.Pacientes_ID_Paciente.HeaderText = "Expediente";
+            this.Pacientes_ID_Paciente.Name = "Pacientes_ID_Paciente";
+            this.Pacientes_ID_Paciente.ReadOnly = true;
+            // 
+            // Doctores_ID_Doctor
+            // 
+            this.Doctores_ID_Doctor.DataPropertyName = "Doctores_ID_Doctor";
+            this.Doctores_ID_Doctor.HeaderText = "Doctores";
+            this.Doctores_ID_Doctor.Name = "Doctores_ID_Doctor";
+            this.Doctores_ID_Doctor.ReadOnly = true;
+            // 
+            // Consultorios_ID_Consultorio
+            // 
+            this.Consultorios_ID_Consultorio.DataPropertyName = "Consultorios_ID_Consultorio";
+            this.Consultorios_ID_Consultorio.HeaderText = "Consultorios";
+            this.Consultorios_ID_Consultorio.Name = "Consultorios_ID_Consultorio";
+            this.Consultorios_ID_Consultorio.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -101,11 +165,11 @@
             this.btnFactura,
             this.btnConsulta});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(32, 3);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 11);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(873, 39);
-            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Size = new System.Drawing.Size(1007, 39);
+            this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // Insertar
@@ -180,122 +244,63 @@
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
-            // dgvCitas
+            // statusStrip1
             // 
-            this.dgvCitas.AllowUserToAddRows = false;
-            this.dgvCitas.AllowUserToDeleteRows = false;
-            this.dgvCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCitas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dgvCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCitas.ColumnHeadersHeight = 30;
-            this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Cita,
-            this.Cit_FechaHora,
-            this.Cit_Motivo,
-            this.Cit_Estado,
-            this.Pacientes_ID_Paciente,
-            this.Doctores_ID_Doctor,
-            this.Consultorios_ID_Consultorio});
-            this.dgvCitas.EnableHeadersVisualStyles = false;
-            this.dgvCitas.Location = new System.Drawing.Point(32, 47);
-            this.dgvCitas.Name = "dgvCitas";
-            this.dgvCitas.ReadOnly = true;
-            this.dgvCitas.RowHeadersVisible = false;
-            this.dgvCitas.RowHeadersWidth = 51;
-            this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCitas.Size = new System.Drawing.Size(873, 420);
-            this.dgvCitas.TabIndex = 13;
-            this.dgvCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCitas_CellContentClick);
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2,
+            this.Registro});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 486);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(934, 25);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // ID_Cita
+            // toolStripStatusLabel2
             // 
-            this.ID_Cita.DataPropertyName = "ID_Cita";
-            this.ID_Cita.HeaderText = "ID_Cita";
-            this.ID_Cita.MinimumWidth = 6;
-            this.ID_Cita.Name = "ID_Cita";
-            this.ID_Cita.ReadOnly = true;
+            this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(147, 20);
+            this.toolStripStatusLabel2.Text = "Registros Encontrados:";
             // 
-            // Cit_FechaHora
+            // Registro
             // 
-            this.Cit_FechaHora.DataPropertyName = "Cit_FechaHora";
-            this.Cit_FechaHora.HeaderText = "Fecha y Hora";
-            this.Cit_FechaHora.MinimumWidth = 6;
-            this.Cit_FechaHora.Name = "Cit_FechaHora";
-            this.Cit_FechaHora.ReadOnly = true;
-            // 
-            // Cit_Motivo
-            // 
-            this.Cit_Motivo.DataPropertyName = "Cit_Motivo";
-            this.Cit_Motivo.HeaderText = "Motivo";
-            this.Cit_Motivo.Name = "Cit_Motivo";
-            this.Cit_Motivo.ReadOnly = true;
-            // 
-            // Cit_Estado
-            // 
-            this.Cit_Estado.DataPropertyName = "Cit_Estado";
-            this.Cit_Estado.HeaderText = "Estado";
-            this.Cit_Estado.Name = "Cit_Estado";
-            this.Cit_Estado.ReadOnly = true;
-            // 
-            // Pacientes_ID_Paciente
-            // 
-            this.Pacientes_ID_Paciente.DataPropertyName = "Pacientes_ID_Paciente";
-            this.Pacientes_ID_Paciente.HeaderText = "Expediente";
-            this.Pacientes_ID_Paciente.Name = "Pacientes_ID_Paciente";
-            this.Pacientes_ID_Paciente.ReadOnly = true;
-            // 
-            // Doctores_ID_Doctor
-            // 
-            this.Doctores_ID_Doctor.DataPropertyName = "Doctores_ID_Doctor";
-            this.Doctores_ID_Doctor.HeaderText = "Doctores";
-            this.Doctores_ID_Doctor.Name = "Doctores_ID_Doctor";
-            this.Doctores_ID_Doctor.ReadOnly = true;
-            // 
-            // Consultorios_ID_Consultorio
-            // 
-            this.Consultorios_ID_Consultorio.DataPropertyName = "Consultorios_ID_Consultorio";
-            this.Consultorios_ID_Consultorio.HeaderText = "Consultorios";
-            this.Consultorios_ID_Consultorio.Name = "Consultorios_ID_Consultorio";
-            this.Consultorios_ID_Consultorio.ReadOnly = true;
+            this.Registro.Name = "Registro";
+            this.Registro.Size = new System.Drawing.Size(13, 20);
+            this.Registro.Text = "0";
             // 
             // CitasGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 511);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.statusStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CitasGestion";
             this.Text = "CitasGestion";
             this.Load += new System.EventHandler(this.CitasGestion_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip1;
+
+        private System.Windows.Forms.DataGridView dgvCitas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Cita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_FechaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_Motivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pacientes_ID_Paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doctores_ID_Doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Consultorios_ID_Consultorio;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Insertar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -304,17 +309,10 @@
         private System.Windows.Forms.ToolStripButton Eliminar;
         private System.Windows.Forms.ToolStripTextBox txtFiltrar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.DataGridView dgvCitas;
-        private System.Windows.Forms.ToolStripButton btnConsulta;
         private System.Windows.Forms.ToolStripButton btnFactura;
-        public System.Windows.Forms.ToolStripStatusLabel Registro;
+        private System.Windows.Forms.ToolStripButton btnConsulta;
+        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Cita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_FechaHora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_Motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cit_Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pacientes_ID_Paciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Doctores_ID_Doctor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Consultorios_ID_Consultorio;
+        public System.Windows.Forms.ToolStripStatusLabel Registro;
     }
 }
