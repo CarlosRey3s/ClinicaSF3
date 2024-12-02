@@ -223,6 +223,14 @@ namespace Principal
                 MessageBox.Show("No hay usuario logueado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = btnFactura.Image; // selecciona la imagen que esta en el boton
+            TituloBarra.Text = btnFactura.Text;
+            FacturaGestion factura = new FacturaGestion();
+            OpenFroms(factura);
+        }
     }
 
 }
