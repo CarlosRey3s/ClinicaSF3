@@ -70,7 +70,9 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lstOpciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AsignarOpcionARol";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AsignarOpcionARol";
             this.Load += new System.EventHandler(this.AsignarOpcionARol_Load);
             this.ResumeLayout(false);

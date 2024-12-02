@@ -58,7 +58,6 @@ namespace General.GUI.GUIEdicion
         }
 
         // Método de validación de campos
-        // Método de validación de campos
         private Boolean Validar()
         {
             Boolean Valido = true;
@@ -170,7 +169,6 @@ namespace General.GUI.GUIEdicion
         {
             Close();
         }
-
         private void cbPoseeCita_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbPoseeCita.SelectedItem.ToString().ToUpper() == "NO")

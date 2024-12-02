@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -50,20 +49,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(53)))), ((int)(((byte)(87)))));
-            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 30);
-            this.panel1.TabIndex = 77;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDescripcion.Location = new System.Drawing.Point(243, 197);
+            this.txtDescripcion.Location = new System.Drawing.Point(242, 169);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(347, 34);
@@ -76,7 +66,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(344, 355);
+            this.btnCancelar.Location = new System.Drawing.Point(343, 327);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 42);
@@ -92,7 +82,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(159, 355);
+            this.btnGuardar.Location = new System.Drawing.Point(158, 327);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 42);
@@ -105,7 +95,7 @@
             // 
             this.txtPrecioUnitario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioUnitario.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(243, 281);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(242, 253);
             this.txtPrecioUnitario.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Size = new System.Drawing.Size(347, 34);
@@ -115,7 +105,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label7.Location = new System.Drawing.Point(78, 280);
+            this.label7.Location = new System.Drawing.Point(77, 252);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 25);
@@ -126,7 +116,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label6.Location = new System.Drawing.Point(98, 202);
+            this.label6.Location = new System.Drawing.Point(97, 174);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 25);
@@ -137,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label4.Location = new System.Drawing.Point(55, 243);
+            this.label4.Location = new System.Drawing.Point(54, 215);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 25);
@@ -148,7 +138,7 @@
             // 
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidad.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtCantidad.Location = new System.Drawing.Point(243, 155);
+            this.txtCantidad.Location = new System.Drawing.Point(242, 127);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(347, 34);
@@ -158,7 +148,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label3.Location = new System.Drawing.Point(122, 158);
+            this.label3.Location = new System.Drawing.Point(121, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 25);
@@ -169,7 +159,7 @@
             // 
             this.txtNombresMedicamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombresMedicamento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombresMedicamento.Location = new System.Drawing.Point(243, 110);
+            this.txtNombresMedicamento.Location = new System.Drawing.Point(242, 82);
             this.txtNombresMedicamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombresMedicamento.Name = "txtNombresMedicamento";
             this.txtNombresMedicamento.Size = new System.Drawing.Size(347, 34);
@@ -179,7 +169,7 @@
             // 
             this.dtpFechaVen.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpFechaVen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaVen.Location = new System.Drawing.Point(243, 239);
+            this.dtpFechaVen.Location = new System.Drawing.Point(242, 211);
             this.dtpFechaVen.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaVen.Name = "dtpFechaVen";
             this.dtpFechaVen.Size = new System.Drawing.Size(142, 34);
@@ -190,7 +180,7 @@
             this.txtIdMedicamento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIdMedicamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdMedicamento.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdMedicamento.Location = new System.Drawing.Point(243, 62);
+            this.txtIdMedicamento.Location = new System.Drawing.Point(242, 34);
             this.txtIdMedicamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdMedicamento.Name = "txtIdMedicamento";
             this.txtIdMedicamento.ReadOnly = true;
@@ -201,7 +191,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label2.Location = new System.Drawing.Point(129, 115);
+            this.label2.Location = new System.Drawing.Point(128, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
@@ -212,7 +202,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.label1.Location = new System.Drawing.Point(177, 64);
+            this.label1.Location = new System.Drawing.Point(176, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 25);
@@ -232,8 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 450);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(655, 423);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -248,7 +237,7 @@
             this.Controls.Add(this.txtIdMedicamento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MedicamentosEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MedicamentosEdicion";
@@ -261,8 +250,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;

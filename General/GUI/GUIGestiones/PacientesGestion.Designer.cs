@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PacientesGestion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,12 +61,14 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 423);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(841, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1121, 26);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -74,13 +76,13 @@
             // 
             this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 20);
             this.toolStripStatusLabel1.Text = "Registros Encontrados:";
             // 
             // lblRegistros
             // 
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(13, 17);
+            this.lblRegistros.Size = new System.Drawing.Size(17, 20);
             this.lblRegistros.Text = "0";
             // 
             // dgvPacientes
@@ -95,14 +97,14 @@
             this.dgvPacientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPacientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgvPacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPacientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPacientes.ColumnHeadersHeight = 30;
             this.dgvPacientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Paciente,
@@ -114,13 +116,14 @@
             this.Pac_CorreoElectronico,
             this.Pac_Direccion});
             this.dgvPacientes.EnableHeadersVisualStyles = false;
-            this.dgvPacientes.Location = new System.Drawing.Point(7, 51);
+            this.dgvPacientes.Location = new System.Drawing.Point(43, 50);
+            this.dgvPacientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.RowHeadersVisible = false;
             this.dgvPacientes.RowHeadersWidth = 51;
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacientes.Size = new System.Drawing.Size(817, 464);
+            this.dgvPacientes.Size = new System.Drawing.Size(1042, 468);
             this.dgvPacientes.TabIndex = 17;
             // 
             // ID_Paciente
@@ -131,7 +134,7 @@
             this.ID_Paciente.MinimumWidth = 6;
             this.ID_Paciente.Name = "ID_Paciente";
             this.ID_Paciente.ReadOnly = true;
-            this.ID_Paciente.Width = 106;
+            this.ID_Paciente.Width = 127;
             // 
             // Pac_Nombre
             // 
@@ -141,7 +144,7 @@
             this.Pac_Nombre.MinimumWidth = 6;
             this.Pac_Nombre.Name = "Pac_Nombre";
             this.Pac_Nombre.ReadOnly = true;
-            this.Pac_Nombre.Width = 143;
+            this.Pac_Nombre.Width = 173;
             // 
             // Pac_Apellido
             // 
@@ -151,7 +154,7 @@
             this.Pac_Apellido.MinimumWidth = 6;
             this.Pac_Apellido.Name = "Pac_Apellido";
             this.Pac_Apellido.ReadOnly = true;
-            this.Pac_Apellido.Width = 150;
+            this.Pac_Apellido.Width = 179;
             // 
             // Pac_FechaNacimiento
             // 
@@ -161,44 +164,48 @@
             this.Pac_FechaNacimiento.MinimumWidth = 6;
             this.Pac_FechaNacimiento.Name = "Pac_FechaNacimiento";
             this.Pac_FechaNacimiento.ReadOnly = true;
-            this.Pac_FechaNacimiento.Width = 142;
+            this.Pac_FechaNacimiento.Width = 171;
             // 
             // Pac_Genero
             // 
             this.Pac_Genero.DataPropertyName = "Pac_Genero";
             this.Pac_Genero.FillWeight = 43.40272F;
             this.Pac_Genero.HeaderText = "Genero";
+            this.Pac_Genero.MinimumWidth = 6;
             this.Pac_Genero.Name = "Pac_Genero";
             this.Pac_Genero.ReadOnly = true;
             this.Pac_Genero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Pac_Genero.Width = 78;
+            this.Pac_Genero.Width = 94;
             // 
             // Pac_Telefono
             // 
             this.Pac_Telefono.DataPropertyName = "Pac_Telefono";
             this.Pac_Telefono.FillWeight = 115.9473F;
             this.Pac_Telefono.HeaderText = "Telefono";
+            this.Pac_Telefono.MinimumWidth = 6;
             this.Pac_Telefono.Name = "Pac_Telefono";
             this.Pac_Telefono.ReadOnly = true;
-            this.Pac_Telefono.Width = 87;
+            this.Pac_Telefono.Width = 103;
             // 
             // Pac_CorreoElectronico
             // 
             this.Pac_CorreoElectronico.DataPropertyName = "Pac_CorreoElectronico";
             this.Pac_CorreoElectronico.FillWeight = 115.9473F;
             this.Pac_CorreoElectronico.HeaderText = "Correo";
+            this.Pac_CorreoElectronico.MinimumWidth = 6;
             this.Pac_CorreoElectronico.Name = "Pac_CorreoElectronico";
             this.Pac_CorreoElectronico.ReadOnly = true;
-            this.Pac_CorreoElectronico.Width = 75;
+            this.Pac_CorreoElectronico.Width = 90;
             // 
             // Pac_Direccion
             // 
             this.Pac_Direccion.DataPropertyName = "Pac_Direccion";
             this.Pac_Direccion.FillWeight = 115.9473F;
             this.Pac_Direccion.HeaderText = "Direccion";
+            this.Pac_Direccion.MinimumWidth = 6;
             this.Pac_Direccion.Name = "Pac_Direccion";
             this.Pac_Direccion.ReadOnly = true;
-            this.Pac_Direccion.Width = 93;
+            this.Pac_Direccion.Width = 109;
             // 
             // toolStrip2
             // 
@@ -222,10 +229,10 @@
             this.toolStripButton2,
             this.toolStripLabel1});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip2.Location = new System.Drawing.Point(26, 9);
+            this.toolStrip2.Location = new System.Drawing.Point(45, 1);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip2.Size = new System.Drawing.Size(755, 39);
+            this.toolStrip2.Size = new System.Drawing.Size(1040, 48);
             this.toolStrip2.TabIndex = 16;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -234,28 +241,28 @@
             this.Insertar.Image = ((System.Drawing.Image)(resources.GetObject("Insertar.Image")));
             this.Insertar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Insertar.Name = "Insertar";
-            this.Insertar.Size = new System.Drawing.Size(73, 36);
+            this.Insertar.Size = new System.Drawing.Size(87, 45);
             this.Insertar.Text = "Agregar";
             this.Insertar.Click += new System.EventHandler(this.Insertar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 48);
             // 
             // Modificar
             // 
             this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
             this.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(82, 36);
+            this.Modificar.Size = new System.Drawing.Size(97, 45);
             this.Modificar.Text = "Modificar";
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
             // 
             // Eliminar
             // 
@@ -263,7 +270,7 @@
             this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
             this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(74, 36);
+            this.Eliminar.Size = new System.Drawing.Size(87, 45);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
@@ -274,33 +281,33 @@
             this.txtFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtFiltro.Size = new System.Drawing.Size(187, 39);
+            this.txtFiltro.Size = new System.Drawing.Size(249, 48);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 48);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 36);
+            this.toolStripButton1.Size = new System.Drawing.Size(65, 45);
             this.toolStripButton1.Text = "Citas";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 48);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButton2.Size = new System.Drawing.Size(96, 45);
             this.toolStripButton2.Text = "Consultas";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -309,16 +316,18 @@
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(20, 36);
+            this.toolStripLabel1.Size = new System.Drawing.Size(20, 45);
             // 
             // PacientesGestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 445);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1121, 548);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvPacientes);
             this.Controls.Add(this.toolStrip2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PacientesGestion";
             this.Text = "PacientesGestion";
             this.Load += new System.EventHandler(this.PacientesGestion_Load);

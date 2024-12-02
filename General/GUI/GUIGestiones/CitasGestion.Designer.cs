@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasGestion));
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.ID_Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,19 +63,18 @@
             this.dgvCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCitas.BackgroundColor = System.Drawing.Color.White;
             this.dgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dgvCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCitas.ColumnHeadersHeight = 30;
             this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_Cita,
@@ -86,13 +85,14 @@
             this.Doctores_ID_Doctor,
             this.Consultorios_ID_Consultorio});
             this.dgvCitas.EnableHeadersVisualStyles = false;
-            this.dgvCitas.Location = new System.Drawing.Point(3, 55);
+            this.dgvCitas.Location = new System.Drawing.Point(49, 64);
+            this.dgvCitas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.RowHeadersVisible = false;
             this.dgvCitas.RowHeadersWidth = 51;
             this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCitas.Size = new System.Drawing.Size(873, 420);
+            this.dgvCitas.Size = new System.Drawing.Size(1014, 532);
             this.dgvCitas.TabIndex = 15;
             // 
             // ID_Cita
@@ -102,6 +102,7 @@
             this.ID_Cita.MinimumWidth = 6;
             this.ID_Cita.Name = "ID_Cita";
             this.ID_Cita.ReadOnly = true;
+            this.ID_Cita.Width = 145;
             // 
             // Cit_FechaHora
             // 
@@ -110,41 +111,52 @@
             this.Cit_FechaHora.MinimumWidth = 6;
             this.Cit_FechaHora.Name = "Cit_FechaHora";
             this.Cit_FechaHora.ReadOnly = true;
+            this.Cit_FechaHora.Width = 145;
             // 
             // Cit_Motivo
             // 
             this.Cit_Motivo.DataPropertyName = "Cit_Motivo";
             this.Cit_Motivo.HeaderText = "Motivo";
+            this.Cit_Motivo.MinimumWidth = 6;
             this.Cit_Motivo.Name = "Cit_Motivo";
             this.Cit_Motivo.ReadOnly = true;
+            this.Cit_Motivo.Width = 145;
             // 
             // Cit_Estado
             // 
             this.Cit_Estado.DataPropertyName = "Cit_Estado";
             this.Cit_Estado.HeaderText = "Estado";
+            this.Cit_Estado.MinimumWidth = 6;
             this.Cit_Estado.Name = "Cit_Estado";
             this.Cit_Estado.ReadOnly = true;
+            this.Cit_Estado.Width = 143;
             // 
             // Pacientes_ID_Paciente
             // 
             this.Pacientes_ID_Paciente.DataPropertyName = "Pacientes_ID_Paciente";
             this.Pacientes_ID_Paciente.HeaderText = "Expediente";
+            this.Pacientes_ID_Paciente.MinimumWidth = 6;
             this.Pacientes_ID_Paciente.Name = "Pacientes_ID_Paciente";
             this.Pacientes_ID_Paciente.ReadOnly = true;
+            this.Pacientes_ID_Paciente.Width = 144;
             // 
             // Doctores_ID_Doctor
             // 
             this.Doctores_ID_Doctor.DataPropertyName = "Doctores_ID_Doctor";
             this.Doctores_ID_Doctor.HeaderText = "Doctores";
+            this.Doctores_ID_Doctor.MinimumWidth = 6;
             this.Doctores_ID_Doctor.Name = "Doctores_ID_Doctor";
             this.Doctores_ID_Doctor.ReadOnly = true;
+            this.Doctores_ID_Doctor.Width = 145;
             // 
             // Consultorios_ID_Consultorio
             // 
             this.Consultorios_ID_Consultorio.DataPropertyName = "Consultorios_ID_Consultorio";
             this.Consultorios_ID_Consultorio.HeaderText = "Consultorios";
+            this.Consultorios_ID_Consultorio.MinimumWidth = 6;
             this.Consultorios_ID_Consultorio.Name = "Consultorios_ID_Consultorio";
             this.Consultorios_ID_Consultorio.ReadOnly = true;
+            this.Consultorios_ID_Consultorio.Width = 145;
             // 
             // toolStrip1
             // 
@@ -165,10 +177,10 @@
             this.btnFactura,
             this.btnConsulta});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(3, 11);
+            this.toolStrip1.Location = new System.Drawing.Point(49, 3);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1007, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1011, 53);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -177,28 +189,28 @@
             this.Insertar.Image = ((System.Drawing.Image)(resources.GetObject("Insertar.Image")));
             this.Insertar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Insertar.Name = "Insertar";
-            this.Insertar.Size = new System.Drawing.Size(70, 36);
+            this.Insertar.Size = new System.Drawing.Size(82, 50);
             this.Insertar.Text = "Insertar";
             this.Insertar.Click += new System.EventHandler(this.Insertar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 53);
             // 
             // Modificar
             // 
             this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
             this.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(82, 36);
+            this.Modificar.Size = new System.Drawing.Size(97, 50);
             this.Modificar.Text = "Modificar";
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 53);
             // 
             // Eliminar
             // 
@@ -206,7 +218,7 @@
             this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
             this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(74, 36);
+            this.Eliminar.Size = new System.Drawing.Size(87, 50);
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
@@ -217,21 +229,21 @@
             this.txtFiltrar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtFiltrar.Size = new System.Drawing.Size(187, 39);
+            this.txtFiltrar.Size = new System.Drawing.Size(249, 53);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(20, 36);
+            this.toolStripLabel1.Size = new System.Drawing.Size(20, 50);
             // 
             // btnFactura
             // 
             this.btnFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnFactura.Image")));
             this.btnFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Size = new System.Drawing.Size(70, 36);
+            this.btnFactura.Size = new System.Drawing.Size(80, 50);
             this.btnFactura.Text = "Factura";
             this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
@@ -240,7 +252,7 @@
             this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
             this.btnConsulta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(78, 36);
+            this.btnConsulta.Size = new System.Drawing.Size(90, 50);
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
@@ -250,10 +262,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.Registro});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 486);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 600);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(934, 25);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1107, 26);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -261,23 +273,25 @@
             // 
             this.toolStripStatusLabel2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel2.Image")));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(147, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(179, 20);
             this.toolStripStatusLabel2.Text = "Registros Encontrados:";
             // 
             // Registro
             // 
             this.Registro.Name = "Registro";
-            this.Registro.Size = new System.Drawing.Size(13, 20);
+            this.Registro.Size = new System.Drawing.Size(17, 20);
             this.Registro.Text = "0";
             // 
             // CitasGestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 511);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1107, 626);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CitasGestion";
             this.Text = "CitasGestion";
             this.Load += new System.EventHandler(this.CitasGestion_Load);

@@ -16,8 +16,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-
-
 namespace Principal
 {
     public partial class Principal : Form
@@ -53,7 +51,6 @@ namespace Principal
         {
             Application.Exit();
         }
-
         private void Principal_Load(object sender, EventArgs e)
         {
             Home home = new Home();
@@ -63,22 +60,15 @@ namespace Principal
             if (!string.IsNullOrEmpty(Sesion.UsuarioNombre))
             {
                 // Mostrar el nombre del usuario en el botón o cualquier control
-                btnusuario.Text = "Bienvenido, " + Sesion.UsuarioNombre;
+                btnusuario.Text = Sesion.UsuarioNombre;
             }
             else
-            {
-                btnusuario.Text = "Usuario no logueado";
-            }
-
-          
+            { btnusuario.Text = "Usuario no logueado";}
         }
         private void button3_Click(object sender, EventArgs e)
         {
             //creacion de objeto para llamarlo
             //nuevoMenuItem.Click += (s, ev) => OpenFroms(f);
-
-         
-            
         }
 
         private void btnDasdoard_Click(object sender, EventArgs e)
@@ -97,16 +87,12 @@ namespace Principal
             PacientesGestion home = new PacientesGestion();
             OpenFroms(home);
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        {}
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            pictureBox2.Image = btnPacientes.Image;
-            TituloBarra.Text = btnPacientes.Text;
+            pictureBox2.Image = btnCitas.Image;
+            TituloBarra.Text = btnCitas.Text;
             PacientesGestion home = new PacientesGestion();
             OpenFroms(home);
         }
@@ -115,24 +101,18 @@ namespace Principal
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-
         }
-
         private void Maximizar_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
                 WindowState = FormWindowState.Maximized;
- 
             else
                 WindowState = FormWindowState.Normal;
-
         }
-
         private void Minimizar_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Maximized)
@@ -140,12 +120,10 @@ namespace Principal
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
         }
-
         private void Salir_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void btnDoctores_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = btnDoctores.Image; // selecciona la imagen que esta en el boton
@@ -153,7 +131,6 @@ namespace Principal
             DoctoresGestion doctores = new DoctoresGestion();
             OpenFroms(doctores);
         }
-
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = btnEmpleados.Image; // selecciona la imagen que esta en el boton
@@ -161,7 +138,6 @@ namespace Principal
             EmpleadosGestion empleados = new EmpleadosGestion();
             OpenFroms(empleados);
         }
-
         private void btnMedicamentos_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = btnMedicamentos.Image; // selecciona la imagen que esta en el boton
@@ -169,7 +145,6 @@ namespace Principal
             MedicamentoGestion medicamento = new MedicamentoGestion();
             OpenFroms(medicamento);
         }
-
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = btnUsuarios.Image; // selecciona la imagen que esta en el boton
@@ -177,42 +152,25 @@ namespace Principal
             UsuariosGestion usuarios = new UsuariosGestion();
             OpenFroms(usuarios);
         }
-
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-           
-            SesionLogin login = new SesionLogin();
-            login.CerrarSesion();
+        {   
+           SesionLogin login = new SesionLogin();
+           login.CerrarSesion();
             
-            Close();
+           Close();
            AppManager appManager = new AppManager();
-            appManager.SesionLogin();
-
-
-
-
+           appManager.SesionLogin();
         }
-
         public static class Sesion
         {
             public static string UsuarioNombre { get; set; }
         }
-
         private void btnusuario_ButtonClick(object sender, EventArgs e)
-        {
-
-        }
-
+        {}
         private void PanelEscritorio_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        {}
         private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        {}
         private void btnusuario_TextChange(object sender, EventArgs e)
         {
             // Verificar si el nombre del usuario está disponible
@@ -229,13 +187,34 @@ namespace Principal
                 MessageBox.Show("No hay usuario logueado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnFactura_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = btnFactura.Image; // selecciona la imagen que esta en el boton
             TituloBarra.Text = btnFactura.Text;
             FacturaGestion factura = new FacturaGestion();
             OpenFroms(factura);
+        }
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            Acerca_De acercade = new Acerca_De();
+            OpenFroms(acercade);
+        }
+
+        private void btnusuario_Click(object sender, EventArgs e)
+        {
+            // Verificar si el nombre del usuario está disponible
+            if (!string.IsNullOrEmpty(Sesion.UsuarioNombre))
+            {
+                // Mostrar el nombre del usuario en un mensaje, en un label, o en el Text de un botón
+                MessageBox.Show("Usuario logueado: " + Sesion.UsuarioNombre, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Si quieres actualizar un TextBox, Label, o ToolStrip, también puedes hacer algo como esto:
+                btnusuario.Text = "Bienvenido, " + Sesion.UsuarioNombre;
+            }
+            else
+            {
+                MessageBox.Show("No hay usuario logueado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

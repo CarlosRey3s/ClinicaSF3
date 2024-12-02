@@ -20,6 +20,7 @@ namespace Principal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AppManager());
+            //Application.Run(new Principal());
            
 
         }

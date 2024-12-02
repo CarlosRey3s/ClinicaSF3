@@ -21,7 +21,6 @@ namespace General.GUI.GUIGestiones
             {
                 // Crear una instancia del controlador
                 Controlador.ControladorMedicamentos controlador = new Controlador.ControladorMedicamentos();
-
                 // Usar el controlador para obtener los datos
                 DataTable medicamentos = controlador.ListarMedicamentos();
 
@@ -34,7 +33,6 @@ namespace General.GUI.GUIGestiones
                 else
                 {
                     Console.WriteLine("No se encontraron medicamentos.");
-                    MessageBox.Show("No se encontraron medicamentos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -66,18 +64,13 @@ namespace General.GUI.GUIGestiones
                 MessageBox.Show("Ocurrió un error al filtrar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public MedicamentoGestion()
         {
             InitializeComponent();
             Cargar();
         }
-
         private void dgvMedicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        {}
         private void Modificar_Click(object sender, EventArgs e)
         {
             try
@@ -104,20 +97,17 @@ namespace General.GUI.GUIGestiones
                 Console.WriteLine("Error al modificar: " + ex.Message);
             }
         }
-
         private void Insertar_Click(object sender, EventArgs e)
         {
             MedicamentosEdicion edicion = new MedicamentosEdicion(); // Abre el formulario de edición
             edicion.ShowDialog();
             Cargar();
         }
-
         private void MedicamentoGestion_Load(object sender, EventArgs e)
         {
             Cargar();
             FiltrarLocalmente();
         }
-
         private void Eliminar_Click(object sender, EventArgs e)
         {
             try
@@ -145,10 +135,7 @@ namespace General.GUI.GUIGestiones
                 MessageBox.Show("Error al eliminar el medicamento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
+        {}
     }
 }

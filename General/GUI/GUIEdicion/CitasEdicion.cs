@@ -39,7 +39,6 @@ namespace General.GUI.GUIEdicion
                 MessageBox.Show("El ComboBox de pacientes está vacío. Verifica los datos en la base de datos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void LlenarComboBoxDoctores()
         {
             try
@@ -129,8 +128,6 @@ namespace General.GUI.GUIEdicion
             }
             return Valido;
         }
-
-
         public CitasEdicion()
         {
             InitializeComponent();
