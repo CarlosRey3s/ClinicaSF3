@@ -25,7 +25,7 @@ namespace General.GUI.GUIGestiones
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -77,7 +77,6 @@ namespace General.GUI.GUIGestiones
 
             }
         }
-
         private void Eliminar_Click(object sender, EventArgs e)
         {
             try
@@ -111,7 +110,6 @@ namespace General.GUI.GUIGestiones
                 MessageBox.Show("Ha ocurrido un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void Modificar_Click(object sender, EventArgs e)
         {
             try
@@ -157,15 +155,6 @@ namespace General.GUI.GUIGestiones
         {
             // Implementación del evento Click del filtro
         }
-
-        private void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void TotalEmpleados_Click(object sender, EventArgs e)
-        {
-        }
-
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             CosultasGestion c = new CosultasGestion();
@@ -178,13 +167,6 @@ namespace General.GUI.GUIGestiones
             c.ShowDialog();
         }
 
-        private void dgvPacientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void toolStripLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+

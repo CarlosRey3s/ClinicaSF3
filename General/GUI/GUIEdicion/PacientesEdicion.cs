@@ -120,11 +120,6 @@ namespace General.GUI.GUIEdicion
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void PacientesEdicion_Load(object sender, EventArgs e)
-        {}
-        private void txtNombresPaciente_TextChanged(object sender, EventArgs e)
-        {}
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
