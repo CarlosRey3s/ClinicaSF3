@@ -45,13 +45,23 @@
   <ItemGroup>
     <Compile Include="CLS\Doctor.cs" />
     <Compile Include="CLS\Empleados.cs" />
+    <Compile Include="CLS\Factura.cs" />
+    <Compile Include="CLS\FacturaDetalle.cs" />
+    <Compile Include="Controlador\ControladorDetalle.cs" />
     <Compile Include="Controlador\ControladorDoctores.cs" />
     <Compile Include="Controlador\ControladorEmpleados.cs" />
+    <Compile Include="Controlador\ControladorFactura.cs" />
     <Compile Include="GUI\GUIEdicion\DoctoresEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GUIEdicion\DoctoresEdicion.Designer.cs">
       <DependentUpon>DoctoresEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIEdicion\FacturaEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIEdicion\FacturaEdicion.Designer.cs">
+      <DependentUpon>FacturaEdicion.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GUIGestiones\DoctoresGestion.cs">
       <SubType>Form</SubType>
@@ -71,11 +81,41 @@
     <Compile Include="GUI\GUIGestiones\EmpleadosGestion.Designer.cs">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GUIGestiones\FacturaGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\FacturaGestion.Designer.cs">
+      <DependentUpon>FacturaGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaConsulta.Designer.cs">
+      <DependentUpon>ListaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaMedicamentos.Designer.cs">
+      <DependentUpon>ListaMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\ListaPaciente.Designer.cs">
+      <DependentUpon>ListaPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GUIGestiones\prueba.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GUIGestiones\prueba.Designer.cs">
       <DependentUpon>prueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\VistaPreviaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUIGestiones\VistaPreviaFactura.Designer.cs">
+      <DependentUpon>VistaPreviaFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Home.cs">
       <SubType>Form</SubType>
@@ -100,6 +140,9 @@
     <EmbeddedResource Include="GUI\GUIEdicion\DoctoresEdicion.resx">
       <DependentUpon>DoctoresEdicion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIEdicion\FacturaEdicion.resx">
+      <DependentUpon>FacturaEdicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUIGestiones\DoctoresGestion.resx">
       <DependentUpon>DoctoresGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,8 +152,23 @@
     <EmbeddedResource Include="GUI\GUIGestiones\EmpleadosGestion.resx">
       <DependentUpon>EmpleadosGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIGestiones\FacturaGestion.resx">
+      <DependentUpon>FacturaGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIGestiones\ListaConsulta.resx">
+      <DependentUpon>ListaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIGestiones\ListaMedicamentos.resx">
+      <DependentUpon>ListaMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIGestiones\ListaPaciente.resx">
+      <DependentUpon>ListaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GUIGestiones\prueba.resx">
       <DependentUpon>prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUIGestiones\VistaPreviaFactura.resx">
+      <DependentUpon>VistaPreviaFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
