@@ -2,7 +2,7 @@
 using General.GUI.GUIGestiones;
 using Principal.CLS;
 using Principal.GUI;
-using Reportes.GUI;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
