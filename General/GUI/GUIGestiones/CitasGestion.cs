@@ -149,7 +149,7 @@ namespace General.GUI.GUIGestiones
         // Evento al hacer clic en una celda del DataGridView
         private void dgvCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         // Consultar citas
@@ -160,7 +160,8 @@ namespace General.GUI.GUIGestiones
         }
         private void btnFactura_Click(object sender, EventArgs e)
         {
-           
+            //FacturaGestion c = new FacturaGestion();
+            //c.ShowDialog();
         }
         private void ContarEmpleados()
         {

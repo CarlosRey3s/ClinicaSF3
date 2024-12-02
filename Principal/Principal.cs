@@ -92,7 +92,10 @@ namespace Principal
         }
         private void btnPacientes_Click(object sender, EventArgs e)
         {
-          
+            pictureBox2.Image = btnPacientes.Image;
+            TituloBarra.Text = btnPacientes.Text;
+            PacientesGestion home = new PacientesGestion();
+            OpenFroms(home);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -102,7 +105,10 @@ namespace Principal
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-
+            pictureBox2.Image = btnPacientes.Image;
+            TituloBarra.Text = btnPacientes.Text;
+            PacientesGestion home = new PacientesGestion();
+            OpenFroms(home);
         }
         //Drag form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

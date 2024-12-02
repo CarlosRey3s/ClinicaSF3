@@ -30,6 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PacientesGestion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvPacientes = new System.Windows.Forms.DataGridView();
+            this.ID_Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pac_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.Insertar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,134 +53,35 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.ID_Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_CorreoElectronico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pac_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStrip2
+            // statusStrip1
             // 
-            this.toolStrip2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.toolStrip2.AutoSize = false;
-            this.toolStrip2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Insertar,
-            this.toolStripSeparator1,
-            this.Modificar,
-            this.toolStripSeparator2,
-            this.Eliminar,
-            this.txtFiltro,
-            this.toolStripSeparator4,
-            this.toolStripButton1,
-            this.toolStripSeparator5,
-            this.toolStripButton2,
-            this.toolStripLabel1});
-            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip2.Location = new System.Drawing.Point(31, 4);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip2.Size = new System.Drawing.Size(714, 39);
-            this.toolStrip2.TabIndex = 5;
-            this.toolStrip2.Text = "toolStrip2";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 423);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(841, 22);
+            this.statusStrip1.TabIndex = 18;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // Insertar
+            // toolStripStatusLabel1
             // 
-            this.Insertar.Image = ((System.Drawing.Image)(resources.GetObject("Insertar.Image")));
-            this.Insertar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Insertar.Name = "Insertar";
-            this.Insertar.Size = new System.Drawing.Size(73, 36);
-            this.Insertar.Text = "Agregar";
-            this.Insertar.Click += new System.EventHandler(this.Insertar_Click);
+            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
+            this.toolStripStatusLabel1.Text = "Registros Encontrados:";
             // 
-            // toolStripSeparator1
+            // lblRegistros
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // Modificar
-            // 
-            this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
-            this.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(82, 36);
-            this.Modificar.Text = "Modificar";
-            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(74, 36);
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
-            // 
-            // txtFiltro
-            // 
-            this.txtFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtFiltro.Size = new System.Drawing.Size(187, 39);
-            this.txtFiltro.Click += new System.EventHandler(this.txtFiltro_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 36);
-            this.toolStripButton1.Text = "Citas";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(83, 36);
-            this.toolStripButton2.Text = "Consultas";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(13, 17);
+            this.lblRegistros.Text = "0";
             // 
             // dgvPacientes
             // 
@@ -201,15 +114,14 @@
             this.Pac_CorreoElectronico,
             this.Pac_Direccion});
             this.dgvPacientes.EnableHeadersVisualStyles = false;
-            this.dgvPacientes.Location = new System.Drawing.Point(12, 46);
+            this.dgvPacientes.Location = new System.Drawing.Point(7, 51);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.RowHeadersVisible = false;
             this.dgvPacientes.RowHeadersWidth = 51;
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacientes.Size = new System.Drawing.Size(751, 464);
-            this.dgvPacientes.TabIndex = 14;
-            this.dgvPacientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellContentClick_1);
+            this.dgvPacientes.Size = new System.Drawing.Size(817, 464);
+            this.dgvPacientes.TabIndex = 17;
             // 
             // ID_Paciente
             // 
@@ -288,29 +200,109 @@
             this.Pac_Direccion.ReadOnly = true;
             this.Pac_Direccion.Width = 93;
             // 
-            // statusStrip1
+            // toolStrip2
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 423);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(775, 22);
-            this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
+            this.toolStrip2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip2.AutoSize = false;
+            this.toolStrip2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Insertar,
+            this.toolStripSeparator1,
+            this.Modificar,
+            this.toolStripSeparator2,
+            this.Eliminar,
+            this.txtFiltro,
+            this.toolStripSeparator4,
+            this.toolStripButton1,
+            this.toolStripSeparator5,
+            this.toolStripButton2,
+            this.toolStripLabel1});
+            this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.toolStrip2.Location = new System.Drawing.Point(26, 9);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.toolStrip2.Size = new System.Drawing.Size(755, 39);
+            this.toolStrip2.TabIndex = 16;
+            this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripStatusLabel1
+            // Insertar
             // 
-            this.toolStripStatusLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripStatusLabel1.Image")));
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
-            this.toolStripStatusLabel1.Text = "Registros Encontrados:";
+            this.Insertar.Image = ((System.Drawing.Image)(resources.GetObject("Insertar.Image")));
+            this.Insertar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Insertar.Name = "Insertar";
+            this.Insertar.Size = new System.Drawing.Size(73, 36);
+            this.Insertar.Text = "Agregar";
+            this.Insertar.Click += new System.EventHandler(this.Insertar_Click);
             // 
-            // lblRegistros
+            // toolStripSeparator1
             // 
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(13, 17);
-            this.lblRegistros.Text = "0";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // Modificar
+            // 
+            this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
+            this.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Modificar.Name = "Modificar";
+            this.Modificar.Size = new System.Drawing.Size(82, 36);
+            this.Modificar.Text = "Modificar";
+            this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
+            this.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(74, 36);
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtFiltro.Size = new System.Drawing.Size(187, 39);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(57, 36);
+            this.toolStripButton1.Text = "Citas";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButton2.Text = "Consultas";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripLabel1
             // 
@@ -323,38 +315,29 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(775, 445);
+            this.ClientSize = new System.Drawing.Size(841, 445);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvPacientes);
             this.Controls.Add(this.toolStrip2);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PacientesGestion";
             this.Text = "PacientesGestion";
             this.Load += new System.EventHandler(this.PacientesGestion_Load);
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton Insertar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton Modificar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton Eliminar;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pac_Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pac_Apellido;
@@ -363,10 +346,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pac_Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pac_CorreoElectronico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pac_Direccion;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton Insertar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton Modificar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton Eliminar;
         public System.Windows.Forms.ToolStripTextBox txtFiltro;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

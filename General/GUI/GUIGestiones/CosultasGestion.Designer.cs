@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CosultasGestion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CosultasGestion));
+            this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Insertar = new System.Windows.Forms.ToolStripButton();
@@ -41,18 +42,58 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.ID_Consulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_Diganostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_PrecioConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_PoseeCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Citas_ID_Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cons_FechaConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvConsultas
+            // 
+            this.dgvConsultas.AllowUserToAddRows = false;
+            this.dgvConsultas.AllowUserToDeleteRows = false;
+            this.dgvConsultas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvConsultas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvConsultas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.dgvConsultas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvConsultas.ColumnHeadersHeight = 30;
+            this.dgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Consulta,
+            this.Cons_Diganostico,
+            this.Cons_Tratamiento,
+            this.Cons_PrecioConsulta,
+            this.Cons_PoseeCita,
+            this.ID_Paciente,
+            this.Citas_ID_Cita,
+            this.Cons_FechaConsulta});
+            this.dgvConsultas.EnableHeadersVisualStyles = false;
+            this.dgvConsultas.Location = new System.Drawing.Point(11, 125);
+            this.dgvConsultas.Name = "dgvConsultas";
+            this.dgvConsultas.ReadOnly = true;
+            this.dgvConsultas.RowHeadersVisible = false;
+            this.dgvConsultas.RowHeadersWidth = 51;
+            this.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConsultas.Size = new System.Drawing.Size(800, 420);
+            this.dgvConsultas.TabIndex = 19;
             // 
             // toolStrip1
             // 
@@ -69,11 +110,11 @@
             this.txtFiltrar,
             this.toolStripLabel1});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(28, 72);
+            this.toolStrip1.Location = new System.Drawing.Point(11, 83);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.Size = new System.Drawing.Size(800, 39);
-            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripSeparator1
@@ -133,11 +174,11 @@
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(28, 0);
+            this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 71);
-            this.panel1.TabIndex = 14;
+            this.panel1.TabIndex = 17;
             // 
             // label1
             // 
@@ -160,45 +201,6 @@
             this.label2.Size = new System.Drawing.Size(126, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Lista de Consultas";
-            // 
-            // dgvConsultas
-            // 
-            this.dgvConsultas.AllowUserToAddRows = false;
-            this.dgvConsultas.AllowUserToDeleteRows = false;
-            this.dgvConsultas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvConsultas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvConsultas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            this.dgvConsultas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvConsultas.ColumnHeadersHeight = 30;
-            this.dgvConsultas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Consulta,
-            this.Cons_Diganostico,
-            this.Cons_Tratamiento,
-            this.Cons_PrecioConsulta,
-            this.Cons_PoseeCita,
-            this.Citas_ID_Cita,
-            this.Cons_FechaConsulta});
-            this.dgvConsultas.EnableHeadersVisualStyles = false;
-            this.dgvConsultas.Location = new System.Drawing.Point(28, 114);
-            this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.ReadOnly = true;
-            this.dgvConsultas.RowHeadersVisible = false;
-            this.dgvConsultas.RowHeadersWidth = 51;
-            this.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsultas.Size = new System.Drawing.Size(800, 420);
-            this.dgvConsultas.TabIndex = 16;
             // 
             // ID_Consulta
             // 
@@ -240,11 +242,19 @@
             this.Cons_PoseeCita.Name = "Cons_PoseeCita";
             this.Cons_PoseeCita.ReadOnly = true;
             // 
+            // ID_Paciente
+            // 
+            this.ID_Paciente.DataPropertyName = "ID_Paciente";
+            this.ID_Paciente.HeaderText = "PacienteID";
+            this.ID_Paciente.Name = "ID_Paciente";
+            this.ID_Paciente.ReadOnly = true;
+            // 
             // Citas_ID_Cita
             // 
             this.Citas_ID_Cita.DataPropertyName = "Citas_ID_Cita";
             this.Citas_ID_Cita.FillWeight = 104.7716F;
-            this.Citas_ID_Cita.HeaderText = "CitasID";
+            this.Citas_ID_Cita.HeaderText = "CitaID";
+            this.Citas_ID_Cita.MinimumWidth = 3;
             this.Citas_ID_Cita.Name = "Citas_ID_Cita";
             this.Citas_ID_Cita.ReadOnly = true;
             // 
@@ -260,7 +270,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 456);
             this.Controls.Add(this.dgvConsultas);
             this.Controls.Add(this.toolStrip1);
@@ -268,17 +277,19 @@
             this.Name = "CosultasGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CosultasGestion";
-            this.Load += new System.EventHandler(this.CosultasGestion_Load);
+            this.Load += new System.EventHandler(this.CosultasGestion_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        public System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton Insertar;
@@ -290,12 +301,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Consulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cons_Diganostico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cons_Tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cons_PrecioConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cons_PoseeCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Citas_ID_Cita;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cons_FechaConsulta;
     }

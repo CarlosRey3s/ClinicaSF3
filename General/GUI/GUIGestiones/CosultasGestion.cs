@@ -11,8 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-    namespace General.GUI.GUIGestiones
-    {
+namespace General.GUI.GUIGestiones
+{
     public partial class CosultasGestion : Form
     {
         // BindingSource para gestionar los datos de las consultas
@@ -154,8 +154,7 @@ using System.Windows.Forms;
             FiltrarLocalmente();
         }
 
-        // Al cargar el formulario
-        private void CosultasGestion_Load(object sender, EventArgs e)
+        private void CosultasGestion_Load_1(object sender, EventArgs e)
         {
             Cargar();
         }

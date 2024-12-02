@@ -15,7 +15,6 @@ namespace General.GUI.GUIEdicion
     public partial class ConsultasEdicion : Form
     {
         private ControladorConsultas controladorConsultas = new ControladorConsultas(); // Instancia del controlador
-
         // Método para llenar el ComboBox de citas
         private void LlenarComboBoxCitas()
         {
@@ -59,10 +58,10 @@ namespace General.GUI.GUIEdicion
         }
 
         // Método de validación de campos
+        // Método de validación de campos
         private Boolean Validar()
         {
             Boolean Valido = true;
-
             try
             {
                 if (string.IsNullOrWhiteSpace(txtDignostico.Text))
@@ -75,24 +74,15 @@ namespace General.GUI.GUIEdicion
                     Notificador.SetError(txtPConsulta, "El precio debe ser un número válido.");
                     Valido = false;
                 }
-
-                // Si "PoseeCita" es "NO", no debe haber cita seleccionada
-                if (cbPoseeCita.SelectedItem.ToString() == "NO")
+                if (!string.IsNullOrWhiteSpace(txtPacientesID.Text) && !int.TryParse(txtPacientesID.Text, out _))
                 {
-                    if (cbbCAsociada.SelectedValue != null)
-                    {
-                        Notificador.SetError(cbbCAsociada, "No debe seleccionarse una cita si PoseeCita es 'NO'.");
-                        Valido = false;
-                    }
+                    Notificador.SetError(txtPacientesID, "El ID del paciente debe ser un número válido.");
+                    Valido = false;
                 }
-                else
+                if (cbPoseeCita.SelectedItem.ToString().ToUpper() == "NO" && cbbCAsociada.SelectedIndex != -1)
                 {
-                    // Si PoseeCita es "SI", debe seleccionarse una cita
-                    if (cbbCAsociada.SelectedValue == null || Convert.ToInt32(cbbCAsociada.SelectedValue) == 0)
-                    {
-                        Notificador.SetError(cbbCAsociada, "Debe seleccionar una cita asociada.");
-                        Valido = false;
-                    }
+                    Notificador.SetError(cbbCAsociada, "No debe seleccionarse una cita si PoseeCita es 'NO'.");
+                    Valido = false;
                 }
             }
             catch (Exception ex)
@@ -100,10 +90,8 @@ namespace General.GUI.GUIEdicion
                 MessageBox.Show("Error en la validación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Valido = false;
             }
-
             return Valido;
         }
-        // Constructor
         public ConsultasEdicion()
         {
             InitializeComponent();
@@ -130,7 +118,7 @@ namespace General.GUI.GUIEdicion
                     oConsulta.Cons_Tratamiento = txtPConsulta.Text.Trim();
                     oConsulta.Cons_PrecioConsulta = float.Parse(txtPConsulta.Text);
                     oConsulta.Cons_FechaConsulta = dtpFechayHora.Value;
-
+                    
                     // Asignamos el valor de PoseeCita
                     oConsulta.Cons_PoseeCita = cbPoseeCita.SelectedItem.ToString();
 
@@ -185,16 +173,22 @@ namespace General.GUI.GUIEdicion
 
         private void cbPoseeCita_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPoseeCita.SelectedItem.ToString() == "NO")
+            if (cbPoseeCita.SelectedItem.ToString().ToUpper() == "NO")
             {
-                // Si PoseeCita es "NO", deshabilitamos el ComboBox de Citas_ID_Cita
+                // Si PoseeCita es "NO", deshabilitamos el ComboBox de citas
                 cbbCAsociada.Enabled = false;
-                cbbCAsociada.SelectedIndex = -1;  // Limpiamos la selección para evitar confusión
+                cbbCAsociada.SelectedIndex = -1;  // Limpiamos cualquier selección
             }
             else
             {
-                // Si PoseeCita es "SI", habilitamos el ComboBox de Citas_ID_Cita
+                // Si PoseeCita es "SI", habilitamos el ComboBox de citas
                 cbbCAsociada.Enabled = true;
+
+                // Si no hay citas seleccionadas, seleccionamos el primer elemento
+                if (cbbCAsociada.SelectedIndex == -1)
+                {
+                    cbbCAsociada.SelectedIndex = 0;
+                }
             }
         }
     }
