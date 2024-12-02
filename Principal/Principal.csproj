@@ -176,7 +176,7 @@
       <Name>DataLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\General\General.csproj">
-      <Project>{990BC726-3CB9-42A2-9B26-86980BEC4296}</Project>
+      <Project>{990bc726-3cb9-42a2-9b26-86980bec4296}</Project>
       <Name>General</Name>
     </ProjectReference>
   </ItemGroup>
