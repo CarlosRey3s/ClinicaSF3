@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Principal.Principal;
 
 
 namespace Principal.GUI
@@ -45,6 +46,9 @@ namespace Principal.GUI
             // Verificar si el nombre de usuario y la contraseña son correctos
             if (dt.Verificar())
             {
+                // Almacenar el nombre de usuario logueado en la clase Sesion
+                Sesion.UsuarioNombre = dt.Username;
+
                 _Autorizado = true;    // Si la verificación es exitosa, marcar como autorizado
                 Close();                // Cerrar el formulario
             }

@@ -60,13 +60,13 @@ namespace General.GUI.GUIGestiones
         }
 
         // Método para validar permisos y habilitar/deshabilitar botones
-        private void ValidarPermisos()
+       /* private void ValidarPermisos()
         {
             // Verificar permisos para insertar, modificar y eliminar
             Insertar.Enabled = TienePermiso("Insertar");
             Modificar.Enabled = TienePermiso("Modificar");
             Eliminar.Enabled = TienePermiso("Eliminar");
-        }
+        }*/
 
         private void FiltrarLocalmente()
         {
@@ -106,19 +106,19 @@ namespace General.GUI.GUIGestiones
         private void UsuariosGestion_Load(object sender, EventArgs e)
         {
             Cargar();
-            ValidarPermisos();
+            //ValidarPermisos();
         }
 
         private void Insertar_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validar si el usuario tiene permiso para insertar
+                /*// Validar si el usuario tiene permiso para insertar
                 if (!Insertar.Enabled)
                 {
                     MessageBox.Show("No tiene permisos para insertar usuarios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 UsuariosEdicion f = new UsuariosEdicion(); // Abrir formulario de edición para insertar
                 f.ShowDialog();
@@ -139,12 +139,12 @@ namespace General.GUI.GUIGestiones
         {
             try
             {
-                // Validar si el usuario tiene permiso para modificar
+               /* // Validar si el usuario tiene permiso para modificar
                 if (!Modificar.Enabled)
                 {
                     MessageBox.Show("No tiene permisos para modificar usuarios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 if (dgvUsuarios.CurrentRow != null)
                 {
@@ -178,12 +178,12 @@ namespace General.GUI.GUIGestiones
         {
             try
             {
-                // Validar si el usuario tiene permiso para eliminar
+                /*// Validar si el usuario tiene permiso para eliminar
                 if (!Eliminar.Enabled)
                 {
                     MessageBox.Show("No tiene permisos para eliminar usuarios.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 if (dgvUsuarios.CurrentRow != null)
                 {
@@ -230,8 +230,12 @@ namespace General.GUI.GUIGestiones
             }
         }
 
+        private void dgvUsuarios_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -241,11 +245,26 @@ namespace General.GUI.GUIGestiones
                     // Obtener el ID del usuario seleccionado
                     int idUsuarioSeleccionado = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID_Usuario"].Value);
 
-                    // Crear una instancia de VerPermisos pasando el ID del usuario
-                    VerPermisos verPermisosForm = new VerPermisos(idUsuarioSeleccionado);
+                    // Crear una instancia de PermisosService
+                    PermisosService permisosService = new PermisosService(idUsuarioSeleccionado);
 
-                    // Mostrar el formulario
-                    verPermisosForm.ShowDialog();
+                    // Obtener las opciones del usuario
+                    var opciones = permisosService.ObtenerOpcionesDelUsuario();
+
+                    // Verificar si el usuario tiene opciones (permisos) asignadas
+                    if (opciones != null && opciones.Rows.Count > 0)
+                    {
+                        // Si tiene permisos, crear la instancia de VerPermisos
+                        VerPermisos verPermisosForm = new VerPermisos(idUsuarioSeleccionado);
+
+                        // Mostrar el formulario
+                        verPermisosForm.ShowDialog();
+                    }
+                    else
+                    {
+                        // Si no tiene permisos, mostrar un mensaje de advertencia
+                        MessageBox.Show("El usuario seleccionado no tiene permisos asignados.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
@@ -258,9 +277,46 @@ namespace General.GUI.GUIGestiones
             }
         }
 
-        private void dgvUsuarios_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                // Asegúrate de que la fila seleccionada no sea null
+                if (dgvUsuarios.CurrentRow != null)
+                {
+                    // Obtener el ID del usuario seleccionado
+                    int idUsuarioSeleccionado = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID_Usuario"].Value);
 
+                    // Crear una instancia de PermisosService
+                    PermisosService permisosService = new PermisosService(idUsuarioSeleccionado);
+
+                    // Obtener las opciones del usuario
+                    var opciones = permisosService.ObtenerOpcionesDelUsuario();
+
+                    // Verificar si el usuario tiene opciones (permisos) asignadas
+                    if (opciones != null && opciones.Rows.Count > 0)
+                    {
+                        // Si tiene permisos, crear la instancia de VerPermisos
+                        VerPermisos verPermisosForm = new VerPermisos(idUsuarioSeleccionado);
+
+                        // Mostrar el formulario
+                        verPermisosForm.ShowDialog();
+                    }
+                    else
+                    {
+                        // Si no tiene permisos, mostrar un mensaje de advertencia
+                        MessageBox.Show("El usuario seleccionado no tiene permisos asignados.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un usuario para ver sus permisos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al gestionar permisos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
